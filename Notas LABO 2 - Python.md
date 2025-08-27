@@ -75,7 +75,7 @@ Se utiliza lambda para funciones sin nombre
 |**|Potencia de los operandos|12 ** 3 = 1728|
 |//|División con resultado de número entero|18 // 5 = 3|
 
-> [!Nota]
+> [!Note]
 > Para obtener el resultado en tipo flotante, uno de los operandos también debe ser de tipo flotante.
 
 ## Operadores relacionales
