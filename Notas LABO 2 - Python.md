@@ -159,9 +159,9 @@ abs() - dict() - help() - min() - setattr() - all() - dir() - hex() - next() - s
 ---
 # Funciones
 
-## print( )
+## `print()`
 
-La función print() admite varios argumentos seguidos.
+La función `print()` admite varios argumentos seguidos.
 En el programa, los argumentos deben separarse por comas.
 Los argumentos se muestran en el mismo orden y en la misma línea, separados por espacios.
 
