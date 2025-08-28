@@ -8,6 +8,8 @@
  > cual era la diferencia entre print y printf?
  > 
  > machete de metodos, leer docu
+ > 
+ > Como hago para que reciba una lista con input?
 ---
 # Introducción
 
@@ -78,15 +80,15 @@ Se utiliza lambda para funciones sin nombre
 
 ### Operadores aritméticos
 
-|Operador|Descripción|Uso|
-|---|---|---|
-|+|Suma entre los operandos|12 + 3 = 15|
-|-|Resta entre los operandos|12 - 3 = 9|
-|*|Multiplicación entre los operandos|12 * 3 = 36|
-|/|División entre los operandos (para saber si un numero es par o impar)|12 / 3 = 4|
-|%|Resto de la división entre los operandos|16 % 3 = 1|
-|**|Potencia de los operandos|12 ** 3 = 1728|
-|//|División con resultado de número entero|18 // 5 = 3|
+| Operador | Descripción                                                                       | Uso            |
+| -------- | --------------------------------------------------------------------------------- | -------------- |
+| +        | Suma entre los operandos                                                          | 12 + 3 = 15    |
+| -        | Resta entre los operandos                                                         | 12 - 3 = 9     |
+| *        | Multiplicación entre los operandos                                                | 12 * 3 = 36    |
+| /        | División entre los operandos                                                      | 12 / 3 = 4     |
+| %        | Resto de la división entre los operandos (para saber si un numero es par o impar) | 16 % 3 = 1     |
+| **       | Potencia de los operandos                                                         | 12 ** 3 = 1728 |
+| //       | División con resultado de número entero                                           | 18 // 5 = 3    |
 
 > [!Note]
 > Para obtener el resultado en tipo flotante, uno de los operandos también debe ser de tipo flotante.
@@ -399,6 +401,13 @@ print(len()) # Imprime cantidad de items
 
 ### `in()`
 Para buscar un elemento en la lista
+
+### `split()`
+Divide el texto en una lista de palabras
+```python
+palabras = texto.split()
+```
+
 
 ### Ejemplos:
 
@@ -837,7 +846,7 @@ for i in range(len(mi_lista)):
 
 ## Estructura de un objeto
 
-|||
+| | |
 |---|---|
 |Tipo|list, int, str...|
 |Valor|[ ], 25, “hola’’...|
@@ -849,9 +858,11 @@ for i in range(len(mi_lista)):
 Los objetos mutables son aquellos que pueden ser modificados después de ser creados.
 Podés cambiar su contenido sin necesidad de crear un nuevo objeto.
 
-- Listas (list)
-- Diccionarios (dict)
-- Conjuntos (set)
+| Tipo | Uso |
+| --- | --- |
+| Listas |`list()`|
+| Diccionarios |`dict()`|
+| Conjuntos |`set()`|
 
 ### Ejemplos de mutabilidad
 
