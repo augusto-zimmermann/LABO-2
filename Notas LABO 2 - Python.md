@@ -1977,4 +1977,103 @@ plt.show()
 
 ![[subplots.png]]
 
+
+
+# Pandas
+pandas.pydata.org
+github pandas cheatsheet
+
+'import pandas as pd'
+
+Sanitizacion de datos, cuando son erroneos o 
+
+## Series
+Una columna de nuestra tabla, se puede inicializar 
+or atras laburar como numpy, se usa en ingenieria de datos
+
+### Inicializacion
+
+## Dataframes
+
+fechas, enteros, strings
+cada columna de nuestro dataframe es la key del dicc
+si no pones la misma cantidad, explota. todas las celdas tenen que estas completas
+
+se puede poner una serie dentro de un dataframe
+
+
+
+
+### Lista de diccionarios
+
+### Excel
+
+puede manejar archivos de excel con '.read_excel'
+
+### Acceso y seleccion de datos
+#### Indexacion
+
+deprecado NO USAR
+
+#### loc-iloc
+
+df te deja agarrar la columna entera, pero no te deja LOCalizar una fila
+
+iloc con indice
+
+loc con etiqueta
+
+#### Slicing
+
+permite seleccionar un rango de filas o columnas, sin necesidad de lamar a tod el dataframe
+
+## Filtrado de datos
+
+hay otros metoodos quehacen query, no se van a usar
+
+es facil, pero engorroso de ver en codigo
+
+se puede combinar con condiciones y operadores logicos
+
+'df.describe' te tira las metricas de la tabla
+
+
+### Filtrado por valor
+
+### Filtrado multiple
+
+## Modificar
+
+como abre una copia, los cambios no se ven reflejados en el archivo original
+
+columns es un parametro de una funcion
+
+inplace?
+
+## manej de nulos
+
+si no le escificas con how() te borra todo a la mierda
+
+### 'fillna()'
+
+### 'dropduplicates()'
+
+## Metodos comunes
+
+# Proceso ETL para parcial
+
+Lo sanitizas antes de cargarlo en tu base de datos
+
+## proceso ELT
+
+lo mandas cmo viene a tu base Y DESPUES lo sanitizas
+
+EL ULTIMO EJERCICIO de pandas es mas o menos lo que se va a ver en el parcial
+
+ppoodes sacar datasets del gobierno para romper las bolas
+
+mira el notebok de pandas para la SINTAXIS
+
+
+
 [^1]: En OR acumulado, el símbolo es `|=`, pero es imposible ponerlo correctamente por la forma que esta formateada la tabla
