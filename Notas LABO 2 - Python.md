@@ -2,27 +2,34 @@
 
 ---
 ---
-# ==REVISAR CODIGOS, los indentados== 
-# ==cual era la diferencia entre print y printf==
-## ==machete de metodos, leer docu==
-# Introducción
+ > [!todo]
+ > REVISAR CODIGOS, los indentados
+ > 
+ > cual era la diferencia entre print y printf?
+ > 
+ > machete de metodos, leer docu
 ---
+# Introducción
+
 Python es un lenguaje de programación de alto nivel que se destaca por su sintaxis clara y legible, lo que lo hace muy popular tanto para principiantes como para programadores experimentados. Los programas en Python suelen organizarse en archivos con extensión ".py" y se ejecutan utilizando un intérprete de Python.
 
-
+---
 ## Google Colab
 
 Es lo que se va a utilizar para la clase. Se conecta a una maquina virtual en los servidores de Google, así que podes correr código desde un teléfono si quisieras. 
  Permite delimitar pedazos de código para correrlos individualmente
  
  Guarda archivos en .pynb y .py
-
+ 
+---
 
 ## Estructura de un código
 
 Es recomendable que en cada línea haya una sola instrucción. Si una construcción es muy larga se puede dividir en varias líneas usando contra barra: \
 
 No se usa punto y coma, sino el indentado
+
+---
 
 # Elementos que lo componen
 - [[#^e8fc27|Palabras reservadas]] (keywords)
@@ -31,7 +38,7 @@ No se usa punto y coma, sino el indentado
 - [[#Delimitadores]]
 - [[#Funciones integradas]] (built-in functions)
 
-# Palabras reservadas
+## Palabras reservadas
 
 Son las que forman el núcleo del lenguaje Python
 ``` wrap
@@ -44,7 +51,9 @@ Estas palabras ==no pueden utilizarse para nombrar otros elementos==, pero puede
 
 Se utiliza lambda para funciones sin nombre
 
-# Literales
+---
+
+## Literales
 
 1. Literales numéricos: Representan valores numéricos, como enteros o números de punto flotante. Por ejemplo:
 	- 42 (entero)
@@ -61,9 +70,11 @@ Se utiliza lambda para funciones sin nombre
 	- (1, 2, 3) (tupla)
 	- { 'a': 1, 'b': 2, 'c': 3 } (diccionario)
 
-# Operadores
 ---
-## Operadores aritméticos
+
+## Operadores
+
+### Operadores aritméticos
 
 |Operador|Descripción|Uso|
 |---|---|---|
@@ -75,10 +86,10 @@ Se utiliza lambda para funciones sin nombre
 |**|Potencia de los operandos|12 ** 3 = 1728|
 |//|División con resultado de número entero|18 // 5 = 3|
 
-> [!Note]
+> [!Nota]
 > Para obtener el resultado en tipo flotante, uno de los operandos también debe ser de tipo flotante.
 
-## Operadores relacionales
+### Operadores relacionales
 
 |Operador|Descripción|Uso|
 |---|---|---|
@@ -89,7 +100,7 @@ Se utiliza lambda para funciones sin nombre
 |<=|Devuelve `True` si el operando der. es mayor o igual|12 <= 3 → False|
 |!=|Devuelve `True` si ambos operandos no son iguales|12 != 3 → True|
 
-## Operadores bit a bit, (para microcontroladores, no se va a usar)
+### Operadores bit a bit, (para microcontroladores, no se va a usar)
 
 |Operador|Descripción|Uso|
 |---|---|---|
@@ -100,7 +111,7 @@ Se utiliza lambda para funciones sin nombre
 |>>|Desplazamiento a la derecha (mueve bits a la derecha)|a >> b = 0 (00000010 >> 00000011 = 0)|
 |<<|Desplazamiento a la izquierda (mueve bits a la izquierda)|a << b = 16 (00000001 << 00000100 = 00010000)|
 
-## Operadores de Asignación
+### Operadores de Asignación
 
 |Operador|Descripción|
 |---|---|
@@ -118,7 +129,7 @@ Se utiliza lambda para funciones sin nombre
 |>>=|a >>= 3 equivale a a = a >> 3|
 |<<=|a <<= 3 equivale a a = a << 3|
 
-## Operadores lógicos
+### Operadores lógicos
 
 |Operador|Descripción|Uso|
 |---|---|---|
@@ -126,7 +137,7 @@ Se utiliza lambda para funciones sin nombre
 |or|Devuelve `True` si alguno de los operandos es `True`|a or b|
 |not|Devuelve `True` si alguno de los operandos es `False`|not a|
 
-## Operadores de pertenencia
+### Operadores de pertenencia
 
 Un operador de pertenencia se emplea para identificar pertenencia en alguna secuencia (listas, strings, tuplas).
 
@@ -135,13 +146,42 @@ Un operador de pertenencia se emplea para identificar pertenencia en alguna secu
 |in|Devuelve `True` si el valor especificado se encuentra en la secuencia. En caso contrario devuelve `False`.|a and b|
 |not in|Devuelve `True` si el valor especificado no se encuentra en la secuencia. En caso contrario devuelve `False`.|not a|
 
-# Delimitadores
+---
+
+## Delimitadores
 
 Los delimitadores son los caracteres que permiten delimitar, separar o representar expresiones.
 
-%% ==delimitadores lol== %%
-
-# Funciones integradas
+|Símbolo|Nombre / Uso|Ejemplo|
+|---|---|---|
+|`'`|Comillas simples|`'hola'`|
+|`"`|Comillas dobles|`"hola"`|
+|`#`|Comentario|`# esto es un comentario`|
+|`\`|Caracter de escape|`"Hola\nMundo"`|
+|`()`|Paréntesis|`print("ok")`|
+|`[]`|Lista o indexado|`[1, 2, 3][0]`|
+|`{}`|Diccionario / set|`{"a": 1}`|
+|`:`|Dos puntos|`if x: ...`|
+|`.`|Punto / acceso a atributo|`obj.attr`|
+|`;`|Separador de sentencias|`x=1; y=2`|
+|`@`|Decorador|`@classmethod`|
+|`=`|Asignación|`x = 5`|
+|`->`|Anotación de retorno|`def f() -> int:`|
+|`+=`|Suma acumulada|`x += 1`|
+|`-=`|Resta acumulada|`x -= 1`|
+|`*=`|Multiplicación acumulada|`x *= 2`|
+|`/=`|División acumulada|`x /= 3`|
+|`//=`|División entera acumulada|`x //= 2`|
+|`%=`|Módulo acumulado|`x %= 2`|
+|`@=`|Multiplicación de matrices acumulada|`A @= B`|
+|`&=`|AND acumulado|`x &= y`|
+|`1=`|OR acumulado|`x 1= y`| 
+|`^=`|XOR acumulado|`x ^= y`|
+|`>>=`|Desplazamiento derecha acumulado|`x >>= 1`|
+|`<<=`|Desplazamiento izquierda acumulado|`x <<= 1`|
+|`**=`|Potencia acumulada|`x **= 2`|
+[^1]
+## Funciones integradas
 
 Una función es un bloque de instrucciones agrupadas, que permiten reutilizar partes de
 un programa.
@@ -161,12 +201,13 @@ abs() - dict() - help() - min() - setattr() - all() - dir() - hex() - next() - s
 
 ## `print()`
 
-La función `print()` admite varios argumentos seguidos.
+La función print() admite varios argumentos seguidos.
 En el programa, los argumentos deben separarse por comas.
 Los argumentos se muestran en el mismo orden y en la misma línea, separados por espacios.
 
-```python  title:test
+```python title:test
 print("Hola", "Mundo")
+
 # Output: Hola Mundo
 ```
 
@@ -237,6 +278,9 @@ variable = 10
 print(isinstance(variable, int)) # Esto imprimirá True si la variable esde tipo entero (int), de lo contrario, imprimirá False.
 ```
 
+## `strip()`
+
+Elimina los saltos de línea
 
 ---
 
@@ -678,7 +722,7 @@ while respuesta.lower() != "salir":
 
 Termina el ciclo inmediatamente, independientemente de la condición.
 
-```python
+```python title:break
 contador = 0
 
 while True:
@@ -692,7 +736,7 @@ if contador >= 5:
 #### `continue`
 Salta el resto del bloque de código en la iteración actual y pasa a la siguiente iteración del ciclo.
 
-```python
+```python title:continue
 contador = 0
 
 while contador < 5:
@@ -712,7 +756,7 @@ print("Contador:", contador)
 Python permite usar una cláusula else con un ciclo while. El bloque else se ejecuta cuando la
 condición del while se vuelve falsa, pero no si el ciclo se interrumpe con un break.
 
-```python
+```python title:else
 contador = 0
 
 while contador < 5:
@@ -1341,105 +1385,102 @@ archivo = open(nombre_archivo, modo)
 - `'r'`: lectura (modo por defecto).
 - `'w'`: escritura, sobrescribiendo el archivo si ya existe o creándolo si no.
 - `'a'`: anexar, para agregar datos al final del archivo sin borrar su contenido.
-- `'b'`: modo binario, que se usa en conjunto con otros modos (por ejemplo, 'rb' para lectura en modo binario).
+- `'b'`: modo binario, que se usa en conjunto con otros modos (por ejemplo, `'rb'` para lectura en modo binario).
 
 ```python
 archivo = open("mi_archivo.txt", "r")  # Abre el archivo en modo lectura
 ```
 
+### Leer archivos
 
-> [!Nota]
->  Cuando trabajamos con archivos en Python, es importante cerrarlos al terminar para liberar recursos del sistema. Esto se hace con archivo.close().
-
-## Leer archivos
 Para leer el contenido de un archivo, existen tres métodos principales:
-● read(): Lee todo el contenido del archivo y lo devuelve como una cadena.
-● readline(): Lee una línea del archivo.
-● readlines(): Lee todas las líneas y devuelve una lista de cadenas, cada una representando una línea
-del archivo.
+1. `read()`: Lee todo el contenido del archivo y lo devuelve como una cadena.
+2. `readline()`: Lee una línea del archivo.
+3. `readlines()`: Lee todas las líneas y devuelve una lista de cadenas, cada una representando una línea del archivo.
 
-
-```
+```python
 archivo = open("mi_archivo.txt", "r")
 contenido = archivo.read()       # Lee todo el contenido
 linea = archivo.readline()       # Lee una sola línea
 lineas = archivo.readlines()     # Lee todas las líneas en una lista
 archivo.close()                  # Cierra el archivo
-
 ```
 
-## Leer archivos
-
-Supongamos que tenemos un archivo datos.txt con el siguiente contenido:
+Supongamos que tenemos un archivo `datos.txt` con el siguiente contenido:
 
 ```
 Python es genial.
 La programación es divertida.
-
 ```
 
 Para leer cada línea de este archivo:
 
-```
+```python
 archivo = open("datos.txt", "r")
 for linea in archivo:
     print(linea.strip())  # strip() elimina los saltos de línea
 archivo.close()
-
 ```
 
-## Escribir en archivos
+### Cerrar archivos
 
-Al escribir en archivos, tenemos dos opciones principales:
-● Modo 'w': Escribe sobre el archivo. Si el archivo ya existe, borra el contenido.
-● Modo 'a': Escribe al final del archivo, sin borrar el contenido existente.
-Para escribir en un archivo, se utiliza el método write().
+Cuando trabajamos con archivos en Python, es importante cerrarlos al terminar para liberar recursos del sistema. Esto se hace con `close()`.
 
-```
-archivo = open("mi_archivo.txt", "w")   # Abre el archivo en modo escritura
-archivo.write("Hola, mundo!\n")         # Escribe una línea
-archivo.write("Python es divertido.\n")
+```python
 archivo.close()
-
 ```
 
-Importante: En modo 'w', si el archivo no existe, Python lo crea automáticamente.
+### Usando el bloque `with` (mejor que `open()`)
 
-## Usando el bloque with
+El bloque with es la forma recomendada de trabajar con archivos en Python, ya que ==asegura que el archivo se cierre automáticamente==, incluso si ocurre un error. Esto se conoce como context manager.
 
-El bloque with es la forma recomendada de trabajar con archivos en Python, ya que asegura que el
-archivo se cierre automáticamente, incluso si ocurre un error. Esto se conoce como context manager.
-
-```
+```python
 with open("mi_archivo.txt", "r") as archivo:
     contenido = archivo.read()
     print(contenido)
 # No es necesario llamar a archivo.close()
-
 ```
 
-## Modos de apertura combinados
+#### Modos de apertura combinados
+> [!TODO]
+> PULIR ESTO QUE ES ALTO MENJUNJE
 
 Además de los modos básicos, podemos combinarlos con 'b' para trabajar con archivos binarios.
-● 'rb': Lectura en modo binario.
-● 'wb': Escritura en modo binario.
-● 'ab': Anexar en modo binario.
+- `'rb'`: Lectura en modo binario.
+- `'wb'`: Escritura en modo binario.
+- `'ab'`: Anexar en modo binario.
 
-```
+```python
 with open("imagen.jpg", "rb") as archivo:
     contenido = archivo.read()
     print(type(contenido))  # tipo bytes
-
 ```
 
-## Trabajando con archivos JSON
+### Escribir en archivos
 
+Al escribir en archivos, tenemos dos opciones principales:
+- Modo `'w'`: Escribe sobre el archivo. Si el archivo ya existe, borra el contenido.
+- Modo `'a'`: Escribe al final del archivo, sin borrar el contenido existente.
 
+Para escribir en un archivo, se utiliza el método `write()`.
 
-Los archivos JSON son comunes para almacenar datos estructurados. Python ofrece el módulo json para
-leer y escribir en formato JSON.
-
+```python
+archivo = open("mi_archivo.txt", "w")   # Abre el archivo en modo escritura
+archivo.write("Hola, mundo!\n")         # Escribe una línea
+archivo.write("Python es divertido.\n")
+archivo.close()
 ```
+
+> [!Important]
+> En modo `'w'`, si el archivo no existe, Python lo crea automáticamente
+
+## Extensiones
+
+### Trabajando con archivos JSON
+
+Los archivos JSON son comunes para almacenar datos estructurados. Python ofrece el módulo `json` para leer y escribir en formato JSON.
+
+```python
 import json
 
 datos = {
@@ -1450,29 +1491,23 @@ datos = {
 
 with open("datos.json", "w") as archivo:
     json.dump(datos, archivo)  # Escribe datos en formato JSON
-
 ```
 
+Para poder leer un archivo `.json` lo haremos de la siguiente manera:
 
-Para poder leer un archivo json lo haremos de la siguiente manera.
-
-```
+```python
 import json
 
 with open("datos.json", "r") as archivo:
     datos = json.load(archivo)  # Carga el contenido como un diccionario
 print(datos)
-
 ```
 
-## Trabajando con archivos CSV
+### Trabajando con archivos CSV
 
+Los archivos CSV son un formato de texto estructurado que se usa mucho en hojas de cálculo. Python incluye el módulo `csv` para trabajar con archivos CSV.
 
-
-Los archivos CSV son un formato de texto estructurado que se usa mucho en hojas de cálculo. Python
-incluye el módulo csv para trabajar con archivos CSV.
-
-```
+```python
 import csv
 
 datos = [
@@ -1484,74 +1519,63 @@ datos = [
 with open("datos.csv", "w", newline="") as archivo:
     escritor = csv.writer(archivo)
     escritor.writerows(datos)  # Escribe múltiples filas
-
 ```
-
-## Trabajando con archivos CSV
-
 
 Para leer los archivos csv podemos hacerlo de la siguiente manera:
 
-```
+```python
 import csv
 
 with open("datos.csv", "r") as archivo:
     lector = csv.reader(archivo)
     for fila in lector:
         print(fila)
-
 ```
 
 ## Archivos y directorios
 
+Para trabajar con archivos y directorios, Python incluye el módulo `os` y `os.path`.
 
+### Obtener la ruta del directorio actual
 
-Para trabajar con archivos y directorios, Python incluye el módulo os y os.path.
-
-Obtener la ruta del directorio actual:
-
-```
+```python
 import os
 ruta_actual = os.getcwd()
 print(ruta_actual)
 ```
 
-Listar archivos en un directorio:
+### Listar archivos en un directorio
 
-```
+```python
 import os
 archivos = os.listdir(".")
 print(archivos)
 ```
 
-Verificar si un archivo existe:
+### Verificar si un archivo existe
 
-```
+```python
 import os
 if os.path.exists("mi_archivo.txt"):
     print("El archivo existe.")
 ```
 
-## Excepciones
+---
 
-Una excepción es un evento que ocurre durante la ejecución de un programa y que interrumpe el flujo
-normal de las instrucciones. Python tiene varios tipos de excepciones ya integradas, como:
+# Excepciones
 
-● ValueError: ocurre cuando se recibe un valor de tipo incorrecto.
-● TypeError: ocurre cuando se usa un tipo de dato inapropiado.
-● FileNotFoundError: ocurre cuando se intenta abrir un archivo que no existe.
+Una excepción es un evento que ocurre durante la ejecución de un programa y que interrumpe el flujo normal de las instrucciones. Python tiene varios tipos de excepciones ya integradas, como:
+- `ValueError`: ocurre cuando se recibe un valor de tipo incorrecto
+- `TypeError`: ocurre cuando se usa un tipo de dato inapropiado
+- `FileNotFoundError`: ocurre cuando se intenta abrir un archivo que no existe
 
-Cuando surge una excepción, el programa se detiene. Sin embargo, podemos "manejar" esa excepción
-para evitar que el programa falle.
+Cuando surge una excepción, el programa se detiene. Sin embargo, podemos "manejar" esa excepción para evitar que el programa falle.
 
-## Sintaxis Básica try y except
+## Sintaxis Básica `try` y `except`
 
+Para capturar y manejar errores en Python, usamos la estructura `try-except`. Básicamente, le decimos a Python: “Intenta hacer algo, y si algo sale mal, haz otra cosa”.
 
-
-Para capturar y manejar errores en Python, usamos la estructura try-except. Básicamente, le decimos a
-Python: “Intenta hacer algo, y si algo sale mal, haz otra cosa”.
-
-```
+```python
 try:
     numero = int(input("Ingresa un número: "))
     print(f"El número ingresado es {numero}")
@@ -1559,14 +1583,13 @@ except ValueError:
     print("Eso no es un número válido.")
 ```
 
-● try contiene el código que puede fallar.
-● except contiene el código que se ejecuta si ocurre el error. En este caso, si el usuario ingresa un
-valor que no se puede convertir a entero, ValueError se “atrapa” y se ejecuta el mensaje de error.
+> `try` contiene el código que puede fallar.
+> 
+> `except` contiene el código que se ejecuta si ocurre el error. En este caso, si el usuario ingresa un valor que no se puede convertir a entero, ValueError se “atrapa” y se ejecuta el mensaje de error.
 
 ## Capturar Múltiples Excepciones
 
-A veces, diferentes tipos de errores pueden surgir en un mismo bloque de código. Podemos usar varios
-except para cada tipo de error, lo cual nos permite manejar cada caso de forma específica.
+A veces, diferentes tipos de errores pueden surgir en un mismo bloque de código. Podemos usar varios except para cada tipo de error, lo cual nos permite manejar cada caso de forma específica.
 
 ```python
 try:
@@ -1580,15 +1603,15 @@ except ValueError:
     print("El contenido del archivo no es un número.")
 ```
 
-● Si el archivo datos.txt no existe, se captura FileNotFoundError.
-● Si el contenido no es un número, se captura ValueError.
+> Si el archivo `datos.txt` no existe, se captura `FileNotFoundError`.
+> 
+> Si el contenido no es un número, se captura `ValueError`.
 
 ## Else y Finally
 
-else: se usa para definir código que se ejecutará solo si no se produce ninguna excepción en el bloque try.
+`else`: se usa para definir código que se ejecutará solo si no se produce ninguna excepción en el bloque try.
 
-finally: se ejecuta siempre, independientemente de si ocurre o no una excepción. Es útil para tareas de
-limpieza, como cerrar archivos o liberar recursos.
+`finally`: se ejecuta siempre, independientemente de si ocurre o no una excepción. Es útil para tareas de limpieza, como cerrar archivos o liberar recursos.
 
 ```python
 try:
@@ -1603,11 +1626,13 @@ finally:
     print("Ejecución finalizada.")
 ```
 
-Si datos.txt existe, se lee y se imprime su contenido. El mensaje “Ejecución finalizada” se muestra siempre, ocurra o no un error.
+> Si `datos.txt` existe, se lee y se imprime su contenido. 
+> 
+> El mensaje “Ejecución finalizada” se muestra siempre, ocurra o no un error.
 
-## Lanzar Excepciones raise
+## Lanzar Excepciones `raise`
 
-La instrucción raise permite lanzar una excepción manualmente. Esto es útil cuando queremos validar condiciones específicas en nuestro código.
+La instrucción `raise` permite lanzar una excepción manualmente. Esto es útil cuando queremos validar condiciones específicas en nuestro código.
 
 ```python
 def dividir(a, b):
@@ -1620,7 +1645,6 @@ try:
     print(resultado)
 except ZeroDivisionError as e:
     print(e)
-
 ```
 
 ## Excepciones Personalizadas
@@ -1674,30 +1698,33 @@ procesar_archivo("datos.txt")
 # Numpy
 
 ## Motivación
+
 Las listas en Python son flexibles, pero lentas para operaciones matemáticas grandes.
 Necesitamos trabajar con grandes volúmenes de datos de forma rápida.
 
 Usando listas
-```
+
+```python
 lista = [i for i in range(1000000)]
 suma = [x+5 for x in lista]
 ```
 
 Usando NumPy
-```
+
+```python
 import numpy as np
 arr = np.arange(1000000)
 suma = arr + 5
 ```
 
-## Introduccion
+## Introducción
 
-NumPy (Numerical Python) es una biblioteca de Python utilizada para realizar
-operaciones matemáticas y estadísticas con grandes conjuntos de datos.
+NumPy (Numerical Python) es una biblioteca de Python utilizada para realizar operaciones matemáticas y estadísticas con grandes conjuntos de datos.
 - Librería fundamental para computación científica.
-- Maneja estructuras llamadas ndarrays (n-dimensional arrays).
+- Maneja estructuras llamadas `ndarrays` (n-dimensional arrays).
 - Soporta operaciones vectorizadas (más eficientes que bucles).
-```
+
+```python
 import numpy as np
 a = np.array([1, 2, 3])
 print(a * 2) # [2 4 6]
@@ -1708,19 +1735,19 @@ print(a * 2) # [2 4 6]
 Muy útiles para inicializar datos.
 
 
-```
+```python
 np.array([1, 2, 3])
 np.zeros((2, 3)) # Matriz 2x3 llena de ceros
 np.ones((3, 3)) # Matriz 3x3 de unos
-np.arange(0, 10, 2) # [0, 2, 4, 6, 8]
-np.linspace(0, 1, 5) # [0. 0.25 0.5 0.75 1.]
+np.arange(0, 10, 2) # range [0, 2, 4, 6, 8]
+np.linspace(0, 1, 5) # [0. 0.25 0.5 0.75 1.] (inicio, fin, cantidad de numeros) genera una cantidad de numeros especificada, inicio y fin inclusive 
 ```
 
 ## Propiedades de los Arrays
 
 A diferencia de las listas, los arrays son homogéneos (todos los elementos del mismo tipo).
 
-```
+```python
 arr = np.array([[1,2,3],[4,5,6]])
 print(arr.shape) # (2,3)
 print(arr.ndim) # 2 dimensiones
@@ -1731,7 +1758,7 @@ print(arr.dtype) # tipo de dato
 
 Funciona parecido a las listas, pero con más potencia en varias dimensiones.
 
-```
+```python
 arr = np.array([10,20,30,40,50])
 print(arr[1]) # 20
 print(arr[1:4]) # [20 30 40]
@@ -1740,10 +1767,10 @@ print(arr[::2]) # [10 30 50]
 
 ## Operaciones Matemáticas
 
-- Operaciones elemento a elemento: + - * /
+- Operaciones elemento a elemento: `+` `-` `*` `/`
 - Broadcasting: NumPy ajusta automáticamente dimensiones
 
-```
+```python
 a = np.array([1,2,3])
 b = np.array([10])
 print(a + b) # [11 12 13]
@@ -1752,12 +1779,19 @@ print(a + b) # [11 12 13]
 ## Funciones NumPy útiles
 
 Estadísticas:
-```
+
+```python
 arr = np.random.randint(1, 100, 10)
 print(np.mean(arr), np.std(arr), np.min(arr), np.max(arr))
+
+
+??????????????????????????????????????????????????????????
+muy bueno, gracias por la explicacion
 ```
+
 Aleatorios:
-```
+
+```python
 np.random.normal(0, 1, 1000) # distribución normal
 np.random.rand(3, 3) # números aleatorios en
 matriz 3x3 de 0 a 1
@@ -1769,10 +1803,12 @@ Es una biblioteca de Python para crear gráficos estáticos, animados e interact
 Fue creada por John D. Hunter y es ampliamente utilizada en la comunidad científica y de análisis de datos debido a su flexibilidad y potencia.
 
 ## Características Principales
+
 - Librería para visualización científica
 - Permite crear gráficos 2D y 3D
 
 Importación:
+
 ```python
 import matplotlib.pyplot as plt
 ```
@@ -1927,4 +1963,4 @@ plt.show()
 
 ![[subplots.png]]
 
-[^1]: Lista de listas
+[^1]: En OR acumulado, el símbolo es `|=`, pero es imposible ponerlo correctamente por la forma que esta formateada la tabla
