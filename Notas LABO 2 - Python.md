@@ -1328,7 +1328,7 @@ Un ejemplo de uso de `**kwargs`
 
 ```python
 def mostrar_info(**kwargs):
-	for clave, valor en kwargs.items():
+	for clave, valor in kwargs.items():
 		print(f"{clave}: {valor}")
 
 mostrar_info(nombre="Ana", edad=30, ciudad="Madrid")
