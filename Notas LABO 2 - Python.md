@@ -2,7 +2,7 @@
 
 ---
 ---
- > [!todo]
+ > [!Todo]
  > REVISAR CODIGOS, los indentados
  > 
  > cual era la diferencia entre print y printf?
@@ -86,7 +86,7 @@ Se utiliza lambda para funciones sin nombre
 |**|Potencia de los operandos|12 ** 3 = 1728|
 |//|División con resultado de número entero|18 // 5 = 3|
 
-> [!Nota]
+> [!Note]
 > Para obtener el resultado en tipo flotante, uno de los operandos también debe ser de tipo flotante.
 
 ### Operadores relacionales
@@ -201,7 +201,7 @@ abs() - dict() - help() - min() - setattr() - all() - dir() - hex() - next() - s
 
 ## `print()`
 
-La función print() admite varios argumentos seguidos.
+La función `print()` admite varios argumentos seguidos.
 En el programa, los argumentos deben separarse por comas.
 Los argumentos se muestran en el mismo orden y en la misma línea, separados por espacios.
 
@@ -211,7 +211,7 @@ print("Hola", "Mundo")
 # Output: Hola Mundo
 ```
 
-Al final de cada print(), Python añade automáticamente un salto de línea
+Al final de cada `print()`, Python añade automáticamente un salto de línea
 ```python
 print("Hola")
 print("Mundo")
@@ -221,7 +221,7 @@ print("Mundo")
 # Mundo
 ```
 
-Para generar una línea en blanco, se puede escribir una orden print() sin argumentos
+Para generar una línea en blanco, se puede escribir una orden `print()` sin argumentos
 
 Se pueden utilizar variables:
 
@@ -240,20 +240,20 @@ print(f"¡Hola, {nombre}!")
 
 ## `input()`
 
-La función input( ) permite obtener texto escrito por teclado:
+La función `input()` permite obtener texto escrito por teclado:
 ```python
 print("¿Cómo se llama?")
 nombre = input()
 print(f"Un gusto, {nombre}"
 ```
-Podemos aprovechar que a la función input() se le puede enviar un argumento que se escribe en la pantalla:
+Podemos aprovechar que a la función `input()` se le puede enviar un argumento que se escribe en la pantalla:
 
 ```python
 nombre = input("¿Cómo se llama? ")
 print(f"Me alegro de conocerle, {nombre}")
 ```
 
-> [!Nota]
+> [!Note]
 > Al igual que `print()`, `input()` pone un salto de linea también
 
 > [!Important]
@@ -951,7 +951,7 @@ conjunto_desde_cadena = set(cadena)
 print(conjunto_desde_cadena) # Output: {'h', 'o', 'l', 'a'}
 ```
 
-Podemos añadir elementos a un conjunto utilizando el `método add()` y eliminarlos usando el método `remove()`
+Podemos añadir elementos a un conjunto utilizando el método `add()` y eliminarlos usando el método `remove()`
 
 ```python
 conjunto = {1, 2, 3}
@@ -1129,9 +1129,9 @@ print(mi_diccionario)
 
 ## Métodos Útiles de Diccionarios
 
-- keys( ): Devuelve una vista de todas las claves en el diccionario.
-- values( ): Devuelve una vista de todos los valores en el diccionario.
-- items( ): Devuelve una vista de todos los pares clave-valor en el diccionario.
+- `keys()`: Devuelve una vista de todas las claves en el diccionario.
+- `values()`: Devuelve una vista de todos los valores en el diccionario.
+- `items()`: Devuelve una vista de todos los pares clave-valor en el diccionario.
 
 ```python
 print(mi_diccionario.keys()) } # Output: dict_keys(['nombre', 'edad'])
@@ -1264,7 +1264,7 @@ def nombre_de_la_funcion():
   
 ## Llamar a una Función
 
-Para ejecutar una función, simplemente llamás su nombre seguido de paréntesis ( ).
+Para ejecutar una función, simplemente llamás su nombre seguido de paréntesis ().
 
 ```python
 def nombre_de_la_funcion():
