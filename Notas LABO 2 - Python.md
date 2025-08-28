@@ -17,9 +17,11 @@ Python es un lenguaje de programación de alto nivel que se destaca por su sinta
 ## Google Colab
 
 Es lo que se va a utilizar para la clase. Se conecta a una maquina virtual en los servidores de Google, así que podes correr código desde un teléfono si quisieras. 
- Permite delimitar pedazos de código para correrlos individualmente
+https://colab.research.google.com/
+
+Permite delimitar pedazos de código para correrlos individualmente
  
- Guarda archivos en .pynb y .py
+Guarda archivos en .pynb y .py
  
 ---
 
