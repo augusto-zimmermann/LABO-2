@@ -1793,8 +1793,7 @@ Aleatorios:
 
 ```python
 np.random.normal(0, 1, 1000) # distribución normal
-np.random.rand(3, 3) # números aleatorios en
-matriz 3x3 de 0 a 1
+np.random.rand(3, 3) # números aleatorios en matriz 3x3 de 0 a 1
 ```
 
 # Matplotlib
