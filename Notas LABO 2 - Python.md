@@ -1699,6 +1699,8 @@ procesar_archivo("datos.txt")
 
 # Numpy
 
+https://numpy.org/devdocs/reference/generated/numpy.std.html
+
 ## Motivación
 
 Las listas en Python son flexibles, pero lentas para operaciones matemáticas grandes.
