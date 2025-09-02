@@ -15,6 +15,13 @@
 
 Python es un lenguaje de programación de alto nivel que se destaca por su sintaxis clara y legible, lo que lo hace muy popular tanto para principiantes como para programadores experimentados. Los programas en Python suelen organizarse en archivos con extensión ".py" y se ejecutan utilizando un intérprete de Python.
 
+## Links útiles
+
+https://ellibrodepython.com/
+https://numpy.org/
+https://matplotlib.org/cheatsheets/
+https://pandas.pydata.org/docs/getting_started/index.html
+
 ---
 ## Google Colab
 
