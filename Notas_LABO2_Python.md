@@ -23,6 +23,9 @@ https://matplotlib.org/cheatsheets/
 https://pandas.pydata.org/docs/getting_started/index.html
 https://docs.kanaries.net/es/topics/Pandas/pandas-rename-column
 https://matplotlib.org/3.1.0/tutorials/intermediate/constrainedlayout_guide.html
+https://www.geeksforgeeks.org/python/compute-the-mean-standard-deviation-and-variance-of-a-given-numpy-array/
+https://www.scaler.com/topics/numpy-correlation/
+
 
 ---
 ## Google Colab
