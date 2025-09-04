@@ -21,6 +21,8 @@ https://ellibrodepython.com/
 https://numpy.org/
 https://matplotlib.org/cheatsheets/
 https://pandas.pydata.org/docs/getting_started/index.html
+https://docs.kanaries.net/es/topics/Pandas/pandas-rename-column
+https://matplotlib.org/3.1.0/tutorials/intermediate/constrainedlayout_guide.html
 
 ---
 ## Google Colab
