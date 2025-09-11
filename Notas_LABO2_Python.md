@@ -2086,6 +2086,52 @@ ppoodes sacar datasets del gobierno para romper las bolas
 
 mira el notebok de pandas para la SINTAXIS
 
+# Decoradores
+
+La idea es hacer cosas genericas, que sirvan para multiples casos
+
+Podes decorar un decorador xd
+
+## Decoradores anidados
+
+Ejecutando 1 > Ejecutando 2 > Ejecutando func > Termina 2 > Termina 1
+
+Lista con un `for` adentro (comprimido)
+
+> tener en claro *args yy **kwargs
+
+## `*args`
+
+Se le podria poner cualquier nombre (aunque por convencion es args), la parte clave es el asterisco.
+Basicamente hace que la cantidad de argumentos sea *ilimitada*
+
+## `**kwargs`
+
+Al igual que `*args`, te acepta cualquier numero de variables.
+Organiza todos las datos que no tengan parametros definidos.
+Como con cualquier diccionario, podes acceder a las claves
+Es común iterar sobre el diccionario kwargs usando el método `.items()` para acceder a cada par clave-valor, como se muestra en el ejemplo:
+
+```python
+def describir_persona(**datos_personales):
+    print("Detalles de la persona:")
+    for clave, valor in datos_personales.items():
+        print(f"- {clave}: {valor}")
+```
+
+## Llamada a la función con varios argumentos de palabra clave
+
+```python
+describir_persona(nombre="Ana", edad=30, ciudad="Madrid")
+```
+
+???????
+Herencia:
+ Se usa frecuentemente en constructores de clases para pasar argumentos a la clase padre sin tener que replicar su firma completa.
+
+Decoradores:
+ Es esencial en los decoradores para pasar argumentos a la función decorada o a la función original, manteniendo la flexibilidad de la firma
+???????
 
 
 [^1]: En OR acumulado, el símbolo es `|=`, pero es imposible ponerlo correctamente por la forma que esta formateada la tabla
