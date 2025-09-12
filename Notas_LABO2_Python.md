@@ -1,42 +1,42 @@
 ---
 
 ---
----
- > [!Todo]
- > REVISAR CODIGOS, los indentados
- > 
- > cual era la diferencia entre print y printf?
- > 
- > machete de metodos, leer docu
- > 
- > Como hago para que reciba una lista con input?
----
+
 # Introducción
 
 Python es un lenguaje de programación de alto nivel que se destaca por su sintaxis clara y legible, lo que lo hace muy popular tanto para principiantes como para programadores experimentados. Los programas en Python suelen organizarse en archivos con extensión ".py" y se ejecutan utilizando un intérprete de Python.
 
+ > [!Todo]
+ > REVISAR CODIGOS, los indentados
+ >
+ > cual era la diferencia entre print y printf?
+ >
+ > machete de metodos, leer docu
+ >
+ > Como hago para que reciba una lista con input?
+
 ## Links útiles
 
-https://ellibrodepython.com/
-https://numpy.org/
-https://matplotlib.org/cheatsheets/
-https://pandas.pydata.org/docs/getting_started/index.html
-https://docs.kanaries.net/es/topics/Pandas/pandas-rename-column
-https://matplotlib.org/3.1.0/tutorials/intermediate/constrainedlayout_guide.html
-https://www.geeksforgeeks.org/python/compute-the-mean-standard-deviation-and-variance-of-a-given-numpy-array/
-https://www.scaler.com/topics/numpy-correlation/
-
+<https://ellibrodepython.com/>
+<https://numpy.org/>
+<https://matplotlib.org/cheatsheets/>
+<https://pandas.pydata.org/docs/getting_started/index.html>
+<https://docs.kanaries.net/es/topics/Pandas/pandas-rename-column>
+<https://matplotlib.org/3.1.0/tutorials/intermediate/constrainedlayout_guide.html>
+<https://www.geeksforgeeks.org/python/compute-the-mean-standard-deviation-and-variance-of-a-given-numpy-array/>
+<https://www.scaler.com/topics/numpy-correlation/>
 
 ---
+
 ## Google Colab
 
-Es lo que se va a utilizar para la clase. Se conecta a una maquina virtual en los servidores de Google, así que podes correr código desde un teléfono si quisieras. 
-https://colab.research.google.com/
+Es lo que se va a utilizar para la clase. Se conecta a una maquina virtual en los servidores de Google, así que podes correr código desde un teléfono si quisieras.
+<https://colab.research.google.com/>
 
 Permite delimitar pedazos de código para correrlos individualmente
- 
+
 Guarda archivos en .pynb y .py
- 
+
 ---
 
 ## Estructura de un código
@@ -48,6 +48,7 @@ No se usa punto y coma, sino el indentado
 ---
 
 # Elementos que lo componen
+
 - [[#^e8fc27|Palabras reservadas]] (keywords)
 - [[#Literales]]
 - [[#Operadores]]
@@ -57,6 +58,7 @@ No se usa punto y coma, sino el indentado
 ## Palabras reservadas
 
 Son las que forman el núcleo del lenguaje Python
+
 ``` wrap
 False - await - else - import - pass - None - break - except - in - raise - True - class - finally - is - return - and - continue - for - lambda - try - as - def - from - nonlocal - while - assert - del - global - not - with - async - elif - if - or - yield 
 ```
@@ -92,15 +94,15 @@ Se utiliza lambda para funciones sin nombre
 
 ### Operadores aritméticos
 
-| Operador | Descripción                                                                       | Uso            |
-| -------- | --------------------------------------------------------------------------------- | -------------- |
-| +        | Suma entre los operandos                                                          | 12 + 3 = 15    |
-| -        | Resta entre los operandos                                                         | 12 - 3 = 9     |
-| *        | Multiplicación entre los operandos                                                | 12 * 3 = 36    |
-| /        | División entre los operandos                                                      | 12 / 3 = 4     |
-| %        | Resto de la división entre los operandos (para saber si un numero es par o impar) | 16 % 3 = 1     |
-| **       | Potencia de los operandos                                                         | 12 ** 3 = 1728 |
-| //       | División con resultado de número entero                                           | 18 // 5 = 3    |
+| Operador   | Descripción                                                                       | Uso            |
+| --------   | --------------------------------------------------------------------------------- | -------------- |
+| `+`        | Suma entre los operandos                                                          | 12 + 3 = 15    |
+| `-`        | Resta entre los operandos                                                         | 12 - 3 = 9     |
+| `*`        | Multiplicación entre los operandos                                                | 12 * 3 = 36    |
+| `/`        | División entre los operandos                                                      | 12 / 3 = 4     |
+| `%`        | Resto de la división entre los operandos (para saber si un numero es par o impar) | 16 % 3 = 1     |
+| `**`       | Potencia de los operandos                                                         | 12 ** 3 = 1728 |
+| `//`       | División con resultado de número entero                                           | 18 // 5 = 3    |
 
 > [!Note]
 > Para obtener el resultado en tipo flotante, uno de los operandos también debe ser de tipo flotante.
@@ -108,13 +110,13 @@ Se utiliza lambda para funciones sin nombre
 ### Operadores relacionales
 
 |Operador|Descripción|Uso|
-|---|---|---|
-|>|Devuelve `True` si el operando de la izquierda es mayor|12 > 3 → True|
-|<|Devuelve `True` si el operando de la derecha es mayor|12 < 3 → False|
-|==|Devuelve `True` si ambos operandos son iguales|12 == 3 → False|
-|>=|Devuelve `True` si el operando izq. es mayor o igual|12 >= 3 → True|
-|<=|Devuelve `True` si el operando der. es mayor o igual|12 <= 3 → False|
-|!=|Devuelve `True` si ambos operandos no son iguales|12 != 3 → True|
+|--------|--------------------------------------------------------|----------------|
+|`>`     |Devuelve `True` si el operando de la izquierda es mayor |12 > 3 → True   |
+|`<`     |Devuelve `True` si el operando de la derecha es mayor   |12 < 3 → False  |
+|`==`    |Devuelve `True` si ambos operandos son iguales          |12 == 3 → False |
+|`>=`    |Devuelve `True` si el operando izq. es mayor o igual    |12 >= 3 → True  |
+|`<=`    |Devuelve `True` si el operando der. es mayor o igual    |12 <= 3 → False |
+|`!=`    |Devuelve `True` si ambos operandos no son iguales       |12 != 3 → True  |
 
 ### Operadores bit a bit, (para microcontroladores, no se va a usar)
 
@@ -131,19 +133,19 @@ Se utiliza lambda para funciones sin nombre
 
 |Operador|Descripción|
 |---|---|
-|=|a = 5 → asigna el valor 5 a la variable a|
-|+=|a += 5 equivale a a = a + 5|
-|-=|a -= 3 equivale a a = a - 3|
-|*=|a *= 3 equivale a a = a * 3|
-|/=|a /= 3 equivale a a = a / 3|
-|%=|a %= 3 equivale a a = a % 3|
-|**=|a **= 3 equivale a a = a ** 3|
-|//=|a //= 3 equivale a a = a // 3|
-|&=|a &= 3 equivale a a = a & 3|
-|\|=|a \|= 3 equivale a a = a \| 3|
-|^=|a ^= 3 equivale a a = a ^ 3|
-|>>=|a >>= 3 equivale a a = a >> 3|
-|<<=|a <<= 3 equivale a a = a << 3|
+|`=`|a = 5 → asigna el valor 5 a la variable a|
+|`+=`|a += 5 equivale a a = a + 5|
+|`-=`|a -= 3 equivale a a = a - 3|
+|`*=`|a *= 3 equivale a a = a * 3|
+|`/=`|a /= 3 equivale a a = a / 3|
+|`%=`|a %= 3 equivale a a = a % 3|
+|`**=`|a **= 3 equivale a a = a ** 3|
+|`//=`|a //= 3 equivale a a = a // 3|
+|`&=`|a &= 3 equivale a a = a & 3|
+|`\|=`|a \|= 3 equivale a a = a \| 3|
+|`^=`|a ^= 3 equivale a a = a ^ 3|
+|`>>=`|a >>= 3 equivale a a = a >> 3|
+|`<<=`|a <<= 3 equivale a a = a << 3|
 
 ### Operadores lógicos
 
@@ -191,12 +193,14 @@ Los delimitadores son los caracteres que permiten delimitar, separar o represent
 |`%=`|Módulo acumulado|`x %= 2`|
 |`@=`|Multiplicación de matrices acumulada|`A @= B`|
 |`&=`|AND acumulado|`x &= y`|
-|`1=`|OR acumulado|`x 1= y`| 
+|`1=`|OR acumulado|`x 1= y`|
 |`^=`|XOR acumulado|`x ^= y`|
 |`>>=`|Desplazamiento derecha acumulado|`x >>= 1`|
 |`<<=`|Desplazamiento izquierda acumulado|`x <<= 1`|
 |`**=`|Potencia acumulada|`x **= 2`|
+
 [^1]
+
 ## Funciones integradas
 
 Una función es un bloque de instrucciones agrupadas, que permiten reutilizar partes de
@@ -209,11 +213,12 @@ abs() - dict() - help() - min() - setattr() - all() - dir() - hex() - next() - s
 > Para sumar los elementos de un vector se puede usar sum, es mejor para la optimización
 
 > [!Important]
-> Los nombres de las funciones integradas se pueden utilizar para nombrar variables, pero entonces las funciones ya no estarán disponibles en el programa. 
-> 
+> Los nombres de las funciones integradas se pueden utilizar para nombrar variables, pero entonces las funciones ya no estarán disponibles en el programa.
+>
 > Si se eliminan las variables, las funciones vuelven a estar disponibles.
 ---
-# Funciones
+
+# Funciones básicas
 
 ## `print()`
 
@@ -228,6 +233,7 @@ print("Hola", "Mundo")
 ```
 
 Al final de cada `print()`, Python añade automáticamente un salto de línea
+
 ```python
 print("Hola")
 print("Mundo")
@@ -253,15 +259,16 @@ nombre = "Juan"
 print(f"¡Hola, {nombre}!")
 ```
 
-
 ## `input()`
 
 La función `input()` permite obtener texto escrito por teclado:
+
 ```python
 print("¿Cómo se llama?")
 nombre = input()
 print(f"Un gusto, {nombre}"
 ```
+
 Podemos aprovechar que a la función `input()` se le puede enviar un argumento que se escribe en la pantalla:
 
 ```python
@@ -317,7 +324,7 @@ fecha_de_nacimiento=”25/05/2000”
 
 # Listas
 
-Las listas son estructuras de datos muy flexibles. 
+Las listas son estructuras de datos muy flexibles.
 
 ```python
 numeros = [1, 2, 3, 4, 5]
@@ -343,6 +350,7 @@ print(frutas[1]) # Imprime: banana
 ```
 
 También se puede acceder a elementos desde el final de la lista utilizando índices negativos:
+
 ```python
 frutas = ["manzana", "banana", "cereza"]
 print(frutas[-1]) # Imprime: cereza
@@ -358,9 +366,8 @@ print(numeros[1:3]) # Imprime: [2, 3]
 ```
 
 > [!Para tener en cuenta]
-> El inicio se incluye, pero el fin no 
+> El inicio se incluye, pero el fin no
 
- 
 ## Modificación de elementos
 
 Se puede cambiar el valor de un elemento de la lista asignándole un nuevo valor
@@ -392,14 +399,13 @@ print(frutas) # Imprime: ["cereza"]
 > [!OJO]
 > Cuando empezas a borrar se empieza a mover la lista
 
-
 ## Operaciones comunes con listas
 
 ### `append()`
 
 Agrega un ítem a la lista
 
-### `extend()` o `+` 
+### `extend()` o `+`
 
 Extiende una lista con los elementos de otra lista
 
@@ -412,14 +418,16 @@ print(len()) # Imprime cantidad de items
 ```
 
 ### `in()`
+
 Para buscar un elemento en la lista
 
 ### `split()`
+
 Divide el texto en una lista de palabras
+
 ```python
 palabras = texto.split()
 ```
-
 
 ### Ejemplos:
 
@@ -505,7 +513,7 @@ print(frutas) # Imprime: []
 ```
 
 > La lista queda vacia
-> 
+>
 ---
 
 # Condicionales
@@ -552,7 +560,6 @@ if temperatura > 20 and not llueve:
 elif temperatura <= 20 or llueve:
 	print("Mejor quedarse en casa.")
 ```
-
 
 > Si se quiere evaluar una condicion, pero no se quiere hacer nada se usa `pass`, respetando el indentado
 
@@ -712,7 +719,7 @@ while condición:
 > [!Important]
 > Que tenga una condición de cierre, a prueba de errores.
 
-### Ejemplos
+### Ejemplos while
 
 En este ejemplo, el ciclo while seguirá ejecutándose mientras contador sea menor que 5. En
 cada iteración, se imprime el valor de contador y luego se incrementa en 1. Cuando contador
@@ -757,6 +764,7 @@ if contador >= 5:
 ```
 
 #### `continue`
+
 Salta el resto del bloque de código en la iteración actual y pasa a la siguiente iteración del ciclo.
 
 ```python title:continue
@@ -801,6 +809,7 @@ Es comúnmente utilizada en ciclos `for` para iterar un número específico de v
 `range(inicio, fin, paso)`
 
 Donde:
+
 - inicio es el número inicial de la secuencia (inclusive)
 - fin es el número en el que la secuencia se detiene (exclusivo)
 - paso es la diferencia entre cada par de números consecutivos en la secuencia
@@ -863,7 +872,6 @@ for i in range(len(mi_lista)):
 |Tipo|list, int, str...|
 |Valor|[ ], 25, “hola’’...|
 |Identificador|125518484848|
-
 
 ## Objetos Mutables
 
@@ -941,6 +949,7 @@ print("lista_nueva:", lista_nueva) # Output: [1, 2, 3, 4]
 ## Objetos Inmutables
 
 Los objetos inmutables son aquellos que, una vez creados, no pueden ser modificados. Si intentas cambiar el valor de un objeto inmutable, en realidad estarás creando un nuevo objeto.
+
 - Números (enteros, flotantes)
 - Cadenas de texto (str)
 - Tuplas (tuple)
@@ -995,13 +1004,11 @@ print(2 in conjunto) # Output: True
 print(5 in conjunto) # Output: False
 ```
   
-  
-
 ## Operaciones de conjuntos
 
 ### Unión
 
-La unión de dos conjuntos contiene todos los elementos de ambos conjuntos. 
+La unión de dos conjuntos contiene todos los elementos de ambos conjuntos.
 Utilizamos el operador `|` o el método `union()`:
 
 ```python
@@ -1013,9 +1020,8 @@ print(union) # Output: {1, 2, 3, 4, 5}
 
 union = conjunto1.union(conjunto2)
 print(union) # Output: {1, 2, 3, 4, 5}
-``` 
+```
   
-
 ### Intersección
 
 La intersección de dos conjuntos contiene solo los elementos que están en ambos conjuntos.
@@ -1032,10 +1038,9 @@ interseccion = conjunto1.intersection(conjunto2)
 print(interseccion) # Output: {3}
 ```
   
-
 ### Diferencia
 
-La diferencia entre dos conjuntos contiene los elementos que están en el primer conjunto pero no en el segundo. 
+La diferencia entre dos conjuntos contiene los elementos que están en el primer conjunto pero no en el segundo.
 Utilizamos el operador `-` o el método `difference()`
 
 ```python
@@ -1049,12 +1054,10 @@ diferencia = conjunto1.difference(conjunto2)
 print(diferencia) # Output: {1, 2}
 ```
 
-  
-
 ### Diferencia simétrica
 
 La diferencia simétrica contiene los elementos que están en cualquiera de los conjuntos, pero
-no en ambos. 
+no en ambos.
 Utilizamos el operador `^` o el método `symmetric_difference()`:
 
 ```python
@@ -1068,8 +1071,6 @@ diferencia_simetrica = conjunto1.symmetric_difference(conjunto2)
 print(diferencia_simetrica) # Output: {1, 2, 4, 5}
 ```
 
-  
-
 ### Subconjunto o superconjunto
 
 Podemos verificar si un conjunto es subconjunto de otro usando `issubset()` y si es un superconjunto usando `issuperset()`:
@@ -1081,7 +1082,6 @@ b = {1, 2, 3, 4, 5}
 print(a.issubset(b)) # Output: True
 print(b.issuperset(a)) # Output: True
 ```
-
 
 ---
 
@@ -1121,7 +1121,7 @@ Para acceder a un valor en el diccionario, usas la clave correspondiente entre c
 
 ```python
 print(mi_diccionario["nombre"]) # Output: Juan
-print(mi_diccionario["edad"]) # Output: 25
+print(mi_diccionario["edad"]) 	# Output: 25
 ```
 
 ## Modificar Elementos del Diccionario
@@ -1159,9 +1159,9 @@ print(mi_diccionario)
 - `items()`: Devuelve una vista de todos los pares clave-valor en el diccionario.
 
 ```python
-print(mi_diccionario.keys()) } # Output: dict_keys(['nombre', 'edad'])
-print(mi_diccionario.values()) # Output: dict_values(['Juan', 26])
-print(mi_diccionario.items()) } # Output: dict_items([('nombre', 'Juan'), ('edad', 6)])
+print(mi_diccionario.keys()) 	# Output: dict_keys(['nombre', 'edad'])
+print(mi_diccionario.values()) 	# Output: dict_values(['Juan', 26])
+print(mi_diccionario.items()) 	# Output: dict_items([('nombre', 'Juan'), ('edad', 6)])
 ```
 
 ## Iterar Sobre un Diccionario
@@ -1242,6 +1242,7 @@ print(fruta3) # Output: cereza
 ## Métodos y Operaciones con Tuplas
 
 Las tuplas tienen algunos métodos integrados y soportan varias operaciones:
+
 - `count(x)`: Devuelve el número de veces que x aparece en la tupla.
 - `index(x)`: Devuelve el índice de la primera aparición de x en la tupla.
 
@@ -1267,11 +1268,12 @@ mi_tupla[1] = 4 # Esto dará un error TypeError: 'tuple' object does not support
 Las tuplas se usan comúnmente cuando quieren almacenar una colección de elementos que no deben cambiar a lo largo del programa.
 
 Por ejemplo, puedes usar tuplas para:
+
 - Almacenar coordenadas (x, y).
 - Almacenar días de la semana.
 - Como claves en diccionarios (ya que las claves deben ser inmutables).
 
---- 
+---
 
 # Funciones
 
@@ -1325,6 +1327,7 @@ saludar("Ana") # Output: Hola, Ana
 ### Funciones con Parámetros por Defecto
 
 Pueden definir valores por defecto para los parámetros. Si no se proporciona un valor al llamar a la función, se usará el valor por defecto.
+
 ```python
 def saludar(nombre="amigo"):
 	print(f"Hola, {nombre}")
@@ -1378,7 +1381,6 @@ print(f"Coordenada X: {coord_x}")
 print(f"Coordenada Y: {coord_y}")
 ```
 
-
 >==Como sabe el programa que dejamos de ingresar tuplas?==
 >
 > ==Por el orden.==
@@ -1419,6 +1421,7 @@ archivo = open("mi_archivo.txt", "r")  # Abre el archivo en modo lectura
 ### Leer archivos
 
 Para leer el contenido de un archivo, existen tres métodos principales:
+
 1. `read()`: Lee todo el contenido del archivo y lo devuelve como una cadena.
 2. `readline()`: Lee una línea del archivo.
 3. `readlines()`: Lee todas las líneas y devuelve una lista de cadenas, cada una representando una línea del archivo.
@@ -1467,10 +1470,12 @@ with open("mi_archivo.txt", "r") as archivo:
 ```
 
 #### Modos de apertura combinados
+>
 > [!TODO]
 > PULIR ESTO QUE ES ALTO MENJUNJE
 
 Además de los modos básicos, podemos combinarlos con 'b' para trabajar con archivos binarios.
+
 - `'rb'`: Lectura en modo binario.
 - `'wb'`: Escritura en modo binario.
 - `'ab'`: Anexar en modo binario.
@@ -1484,6 +1489,7 @@ with open("imagen.jpg", "rb") as archivo:
 ### Escribir en archivos
 
 Al escribir en archivos, tenemos dos opciones principales:
+
 - Modo `'w'`: Escribe sobre el archivo. Si el archivo ya existe, borra el contenido.
 - Modo `'a'`: Escribe al final del archivo, sin borrar el contenido existente.
 
@@ -1590,6 +1596,7 @@ if os.path.exists("mi_archivo.txt"):
 # Excepciones
 
 Una excepción es un evento que ocurre durante la ejecución de un programa y que interrumpe el flujo normal de las instrucciones. Python tiene varios tipos de excepciones ya integradas, como:
+
 - `ValueError`: ocurre cuando se recibe un valor de tipo incorrecto
 - `TypeError`: ocurre cuando se usa un tipo de dato inapropiado
 - `FileNotFoundError`: ocurre cuando se intenta abrir un archivo que no existe
@@ -1609,7 +1616,7 @@ except ValueError:
 ```
 
 > `try` contiene el código que puede fallar.
-> 
+>
 > `except` contiene el código que se ejecuta si ocurre el error. En este caso, si el usuario ingresa un valor que no se puede convertir a entero, ValueError se “atrapa” y se ejecuta el mensaje de error.
 
 ## Capturar Múltiples Excepciones
@@ -1629,7 +1636,7 @@ except ValueError:
 ```
 
 > Si el archivo `datos.txt` no existe, se captura `FileNotFoundError`.
-> 
+>
 > Si el contenido no es un número, se captura `ValueError`.
 
 ## Else y Finally
@@ -1651,8 +1658,8 @@ finally:
     print("Ejecución finalizada.")
 ```
 
-> Si `datos.txt` existe, se lee y se imprime su contenido. 
-> 
+> Si `datos.txt` existe, se lee y se imprime su contenido.
+>
 > El mensaje “Ejecución finalizada” se muestra siempre, ocurra o no un error.
 
 ## Lanzar Excepciones `raise`
@@ -1695,6 +1702,7 @@ except EdadInvalidaError as e:
 ## Ejemplo Completo
 
 Este ejemplo es un flujo completo de manejo de errores en Python:
+
 - Intenta abrir y procesar el archivo.
 - Captura errores específicos para FileNotFoundError y ValueError.
 - Cierra el archivo en el bloque finally para asegurarse de que el recurso se libere.
@@ -1722,7 +1730,7 @@ procesar_archivo("datos.txt")
 
 # Numpy
 
-https://numpy.org/devdocs/reference/generated/numpy.std.html
+<https://numpy.org/devdocs/reference/generated/numpy.std.html>
 
 ## Motivación
 
@@ -1744,9 +1752,10 @@ arr = np.arange(1000000)
 suma = arr + 5
 ```
 
-## Introducción
+## Introducción a NumPy
 
 NumPy (Numerical Python) es una biblioteca de Python utilizada para realizar operaciones matemáticas y estadísticas con grandes conjuntos de datos.
+
 - Librería fundamental para computación científica.
 - Maneja estructuras llamadas `ndarrays` (n-dimensional arrays).
 - Soporta operaciones vectorizadas (más eficientes que bucles).
@@ -1760,7 +1769,6 @@ print(a * 2) # [2 4 6]
 ## Creación de Arrays
 
 Muy útiles para inicializar datos.
-
 
 ```python
 np.array([1, 2, 3])
@@ -1852,6 +1860,7 @@ plt.show()
 ![[Primer grafico.png]]
 
 ## Creación de un Gráfico Simple
+
 ```python
 import matplotlib.pyplot as plt
 
@@ -1872,7 +1881,6 @@ plt.show()
 ```
 
 ![[Facultad/matplot/grafico simple.png]]
-
 
 ## Creación de Gráfico de Barras
 
@@ -1918,6 +1926,7 @@ plt.show()
 ```
 
 ![[histograma.png]]
+
 ## Creación de Gráfico de Dispersión
 
 ```python
@@ -1989,18 +1998,18 @@ plt.show()
 
 ![[subplots.png]]
 
-
-
 # Pandas
+
 pandas.pydata.org
 github pandas cheatsheet
 
 'import pandas as pd'
 
-Sanitizacion de datos, cuando son erroneos o 
+Sanitizacion de datos, cuando son erroneos o
 
 ## Series
-Una columna de nuestra tabla, se puede inicializar 
+
+Una columna de nuestra tabla, se puede inicializar
 or atras laburar como numpy, se usa en ingenieria de datos
 
 ### Inicializacion
@@ -2013,9 +2022,6 @@ si no pones la misma cantidad, explota. todas las celdas tenen que estas complet
 
 se puede poner una serie dentro de un dataframe
 
-
-
-
 ### Lista de diccionarios
 
 ### Excel
@@ -2023,6 +2029,7 @@ se puede poner una serie dentro de un dataframe
 puede manejar archivos de excel con '.read_excel'
 
 ### Acceso y seleccion de datos
+
 #### Indexacion
 
 deprecado NO USAR
@@ -2047,8 +2054,7 @@ es facil, pero engorroso de ver en codigo
 
 se puede combinar con condiciones y operadores logicos
 
-'df.describe' te tira las metricas de la tabla
-
+`df.describe` te tira las metricas de la tabla
 
 ### Filtrado por valor
 
@@ -2066,9 +2072,9 @@ inplace?
 
 si no le escificas con how() te borra todo a la mierda
 
-### 'fillna()'
+### `fillna()`
 
-### 'dropduplicates()'
+### `dropduplicates()`
 
 ## Metodos comunes
 
@@ -2078,13 +2084,13 @@ Lo sanitizas antes de cargarlo en tu base de datos
 
 ## proceso ELT
 
-lo mandas cmo viene a tu base Y DESPUES lo sanitizas
+Lo mandas como viene a tu base Y DESPUES lo sanitizas
 
 EL ULTIMO EJERCICIO de pandas es mas o menos lo que se va a ver en el parcial
 
-ppoodes sacar datasets del gobierno para romper las bolas
+Podes sacar datasets del gobierno para romper las bolas
 
-mira el notebok de pandas para la SINTAXIS
+Mira el notebook de pandas para la SINTAXIS
 
 # Decoradores
 
@@ -2132,6 +2138,5 @@ Herencia:
 Decoradores:
  Es esencial en los decoradores para pasar argumentos a la función decorada o a la función original, manteniendo la flexibilidad de la firma
 ???????
-
 
 [^1]: En OR acumulado, el símbolo es `|=`, pero es imposible ponerlo correctamente por la forma que esta formateada la tabla
