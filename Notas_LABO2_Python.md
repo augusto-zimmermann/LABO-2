@@ -2139,4 +2139,273 @@ Decoradores:
  Es esencial en los decoradores para pasar argumentos a la función decorada o a la función original, manteniendo la flexibilidad de la firma
 ???????
 
+# Generadores y Requests
+
+Llamada bajo nivel o paso por paso
+
+Un iterador es un objeto que implementa dos métodos especiales:
+
+- `iter()`: devuelve el propio objeto iterador.
+- `next()`: devuelve el siguiente valor o lanza StopIteration.
+
+Con un try/exception se detiene
+
+Para trabajar en el tiempo de ejecucion y no llenar la memoria, ir tomando uno a uno. Ejemplo, en vez de tomar 400 paginas de un word, tomas 1 a 1
+
+## Generador
+
+```python
+def contador(n): # Declaras una funcion
+	for i in range(n): # Codigo normal
+		yield i
+gen = contador(3)
+print(next(gen)) # arranca con 0, seguimos con el atributo next
+print(next(gen)) # 1
+print(next(gen)) # 2
+```
+
+No solamente retorna el valor, si no las variables intermedias
+
+### Funciones con generadores
+
+Un generador es un iterador, entonces:
+
+`next(gen)`: obtiene el siguiente valor.
+
+`iter(gen)`: devuelve el generador mismo.
+
+- Se puede usar en bucles:
+
+```python
+for x in contador(5):
+print(x)
+```
+
+- Se puede convertir a lista:
+
+```python
+list(contador(5)) # [0, 1, 2, 3, 4]
+```
+
+### Ejemplo practico
+Leer archivos grandes. No carga todo el archivo en memoria, lo lee línea a
+línea.
+
+```python
+def leer_lineas(archivo):
+	with open(archivo) as f:
+		for linea in f:
+			yield linea.strip()
+for linea in leer_lineas("archivo_grande.txt"):
+	print(linea)
+```
+
+### Generadores infinitos
+
+```python
+def naturales():
+	n = 1
+	while True:
+		yield n
+		n += 1
+
+gen = naturales()
+print(next(gen)) # 1
+print(next(gen)) # 2
+```
+
+Sirve para secuencias sin fin, por ejemplo, el streaming de datos
+
+###  Uso de `yield from`
+
+```python
+def subgen():
+	yield 1
+	yield 2
+
+def gen():
+	yield from subgen()
+	yield 3
+
+print(list(gen())) # [1, 2, 3]
+```
+
+Permite delegar en otro generador.
+
+
+### Expresiones generadoras
+
+```python
+cuadrados = (x**2 for x in range(5))
+
+print(list(cuadrados)) # [0, 1, 4, 9, 16]
+```
+
+Similar a listas por comprensión, pero no guarda todo en memoria. (no es una tupla)
+
+
+### Conclusión de Generadores
+
+- Son iteradores simplificados.
+- Ahorran memoria y calculan valores bajo demanda.
+- Ideales para procesamiento de datos grandes o secuencias infinitas.
+
+## Requests
+
+Es una librería externa que facilita el trabajo con HTTP (el protocolo que
+usan los navegadores para comunicarse con servidores).
+
+Con requests podés:
+
+| Request | Descripcion |
+|---|---|
+| GET | Traer datos de una API o página web |
+| POST | Enviar datos (por ejemplo, registrar un usuario) |
+| PUT/PATCH | Actualizar información |
+| DELETE | Borrar un recurso |
+
+Con todas esas operaciones podes hacer un CRUD
+Son como las tablas de mandamientos de HTTP
+
+### Anatomia de una URL
+
+> [!TODO:]
+> Ver slide
+
+### Parametros de una URL
+> [!TODO:]
+> Ver slide
+
+Ocultamos lo que mandamos
+
+Podemos decirle al GET que informacion traer, con un signo de interrogacion y una llave
+
+Si queres, podes poner mas parametros en la solicitud, con un `&` como separador
+
+### Codigos de estado HTTP
+
+> [!TODO:]
+> Ver slide
+> Generar tabla errores
+
+El peor error es el 500, la culpa la tiene el dev (vos xd)
+El 200 salio bien
+El 400 tiene la culpa el cliente
+
+404: La pagina no existe
+401: No tiene as credenciales que se piden
+500: Lo odia todo el mundo
+203: Sale bien, pero deberia salir mal
+
+### Hacer una peticion GET
+
+<https://pokeapi.co/docs/v2/>
+
+Ejemplo: traer datos de Pikachu.
+
+```python
+import requests
+
+url = "https://pokeapi.co/api/v2/pokemon/pikachu"
+r = requests.get(url) # hacemos la petición
+
+print(r.status_code) # 200 = éxito
+print(r.json()["name"]) # pikachu
+print(r.json()["height"]) # altura
+print(r.json()["weight"]) # peso
+```
+
+> `.json()` convierte la respuesta en un diccionario de Python.
+
+>[!NOTE]
+> Todas las API se manejan con `JSON`
+
+#### Consultar lista de Pokémon
+
+Ejemplo: traer lista limitada en 5 elementos.
+
+```python
+url = "https://pokeapi.co/api/v2/pokemon?limit=5"
+r = requests.get(url)
+data = r.json()
+
+for p in data["results"]:
+print(p["name"])
+```
+
+> `?limit=`: Limita la cantidad de resultados
+
+#### Obtener habilidades
+
+```python
+url = "https://pokeapi.co/api/v2/pokemon/charmander"
+r = requests.get(url)
+data = r.json()
+
+print("Charmander tiene las habilidades:")
+for habilidad in data["abilities"]:
+	print("-", habilidad["ability"]["name"])
+```
+
+Lo ideal seria tener la url cargada hasta v2 en este caso, despues ir sumando
+
+### Manejo de errores
+
+No todas las peticiones son exitosas. Por ejemplo, si pedimos un
+Pokémon que no existe:
+r = requests.get("https://pokeapi.co/api/v2/pokemon/noexiste")
+if r.status_code == 404:
+print("Pokémon no encontrado")
+
+> Siempre es buena práctica verificar status_code.
+
+### Timeout
+
+A veces el servidor tarda mucho. Podemos evitar que nuestro programa
+se quede colgado con `timeout` (en segundos):
+
+```python
+try:
+	r = requests.get("https://pokeapi.co/api/v2/pokemon/ditto", timeout=2)
+	print(r.json()["name"])
+except requests.Timeout:
+	print("La petición tardó demasiado"
+```
+
+## Usando generadores con Requests
+
+```python
+def get_pokemon(limit=10):
+	url = f"https://pokeapi.co/api/v2/pokemon?limit={limit}"
+	r = requests.get(url)
+	for p in r.json()["results"]:
+		yield p["name"]
+
+for poke in get_pokemon(10):
+	print(poke)
+```
+
+## Ejercicio integrador
+
+Queremos construir un programa que permita consultar la PokeAPI para obtener Pokémon de un tipo específico (por ejemplo, "fire", "water", "electric") y recorrerlos uno por uno usando un generador, en lugar de traer toda la lista en memoria.
+
+Además, cada vez que pidamos el siguiente Pokémon, se deberá mostrar:
+
+- Nombre
+- Altura
+- Peso
+- Lista de habilidades
+
+Ayuda:
+
+```python
+def get_pokemon_by_type(tipo):
+"""
+Generador que obtiene Pokémon de un tipo (fire, water, electric, etc.)
+desde la PokeAPI y los entrega uno por uno.
+"""
+url = f"https://pokeapi.co/api/v2/type/{tipo}"
+r = requests.get(url)
+```
+
 [^1]: En OR acumulado, el símbolo es `|=`, pero es imposible ponerlo correctamente por la forma que esta formateada la tabla
