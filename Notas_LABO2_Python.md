@@ -2408,4 +2408,14 @@ url = f"https://pokeapi.co/api/v2/type/{tipo}"
 r = requests.get(url)
 ```
 
+
+# Modularizacion
+
+Notas crudas
+
+pip freeze > entorno.txt
+Genera un archivo con las versiones de cada dependencia
+
+pip install entorno.txt
+
 [^1]: En OR acumulado, el símbolo es `|=`, pero es imposible ponerlo correctamente por la forma que esta formateada la tabla
