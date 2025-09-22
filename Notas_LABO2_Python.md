@@ -2411,11 +2411,14 @@ r = requests.get(url)
 
 # Modularizacion
 
-Notas crudas
+En la terminal:
 
-pip freeze > entorno.txt
-Genera un archivo con las versiones de cada dependencia
+```powershell
+pip freeze > entorno.txt # Genera un archivo con las versiones de cada dependencia
+```
 
+```powershell
 pip install entorno.txt
+```
 
 [^1]: En OR acumulado, el símbolo es `|=`, pero es imposible ponerlo correctamente por la forma que esta formateada la tabla
