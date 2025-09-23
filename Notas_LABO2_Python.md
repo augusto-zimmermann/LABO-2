@@ -2421,4 +2421,116 @@ pip freeze > entorno.txt # Genera un archivo con las versiones de cada dependenc
 pip install entorno.txt
 ```
 
+# POO (crudo)
+
+Lo componen:
+
+- Constructor `__init__`: Es un método especial que se llama automáticamente cuando se crea una nueva instancia de la clase. Se usa para inicializar los atributos del objeto.
+
+- Atributos: Son variables que pertenecen a la clase. Pueden ser de instancia (diferentes para cada objeto) o de clase (compartidos entre todas las instancias).
+
+- Métodos: Son funciones definidas dentro de la clase que describen el comportamiento de los objetos de la clase  y métodos de clase que se comparten entre todas las instancias y son propios de la clase .
+
+Atributos y metodos (una funcion adentro de una clase)
+
+instanciar una clase: genera un objeto (algoritmos 1 y 2)
+
+Por convencion PascalCase para definir una clave (mirar ejemplos)
+
+metodo `__init__()` generalmente se utiliza para inicializar las propiedades de un objeto
+self: instancia el propio objeto, se pone siempre al inicio del constructor
+
+Importante respetar el orden para crear las instancias
+
+Para utilizar esos atributos en los metodos, hay que pasar el `self`
+
+Abstraccion
+Encapsulamiento
+Herencia
+Polimorfismo
+
+## atributos
+
+### getter
+
+## Decoradores
+
+se usan cuando definis la clase
+
+`cls`?
+
+`@classmethod`: se utiliza para crear metodos propios de la clase, como para hacer un contador
+
+`@staticmethod`: para hacer una funcion rapida que no tenga relacion con el objeto propio
+
+algo dentro del constructor, llamas a self. Algo afuera cls?
+
+## cls
+
+> [!TODO:]
+> Limpiar 
+
+In Python's object-oriented programming (POO), "cls" is a conventional name for the first argument of a classmethod, a special type of method that receives a reference to the class itself rather than an instance of the class (which would be self). Class methods, defined with the @classmethod decorator, are useful for operations that involve the class as a whole, such as factory methods that create instances of the class or methods that interact with class attributes. 
+What "cls" represents:
+
+    A reference to the class:
+    When you define a method with the @classmethod decorator, the first parameter (conventionally named cls) automatically receives a reference to the class that the method belongs to. 
+
+Not an instance:
+Unlike self, which refers to a specific instance (object) of a class, cls refers to the class itself. 
+
+When to use cls and @classmethod:
+
+- Factory methods:
+    You can use class methods to create instances of the class in different ways. For example, you might have a factory method that creates an object from a dictionary. 
+
+- Class-level operations:
+When a method needs to perform an operation that belongs to the class itself, rather than to a specific instance, a class method is appropriate. 
+
+- Working with inheritance:
+cls automatically handles inheritance, ensuring that it always refers to the correct class, even when the method is called on a subclass. 
+
+
+Ejemplo:
+
+```python
+class MyClass:
+    class_attribute = "Hello"
+
+    @classmethod
+    def greet(cls):
+        # 'cls' refers to MyClass here
+        print(f"Greeting from {cls.__name__}!")
+        print(f"Class attribute: {cls.class_attribute}")
+
+MyClass.greet()
+```
+
+Salida:
+
+```
+Greeting from MyClass!
+Class attribute: Hello
+```
+
+## primer draft ej1
+
+```python
+class Estudiante:
+    
+    total_materias = 0
+
+    # el estudiiante ya tiene una lista de materias, no es input
+    def __init__(self, estudiante, lista_materias):
+        self.estudiante = estudiante
+        self.lista_materias = lista_materias
+
+    @classmethod
+    def agregar_materia(cls):
+        lista_materias = list(input("Ingrese la materia para agregar: "))
+        Estudiante.total_materias += 1
+
+    Estudiante.agregar_materia()
+```
+
 [^1]: En OR acumulado, el símbolo es `|=`, pero es imposible ponerlo correctamente por la forma que esta formateada la tabla
