@@ -2288,14 +2288,14 @@ Si queres, podes poner mas parametros en la solicitud, con un `&` como separador
 > Ver slide
 > Generar tabla errores
 
-El peor error es el 500, la culpa la tiene el dev (vos xd)
-El 200 salio bien
+El peor error es el 500, la culpa la tiene el dev (vos xd)  
+El 200 salio bien  
 El 400 tiene la culpa el cliente
 
-404: La pagina no existe
-401: No tiene as credenciales que se piden
-500: Lo odia todo el mundo
-203: Sale bien, pero deberia salir mal
+404: La pagina no existe  
+401: No tiene as credenciales que se piden  
+500: Lo odia todo el mundo  
+203: Sale bien, pero deberia salir mal  
 
 ### Hacer una peticion GET
 
@@ -2353,9 +2353,12 @@ Lo ideal seria tener la url cargada hasta v2 en este caso, despues ir sumando
 
 No todas las peticiones son exitosas. Por ejemplo, si pedimos un
 Pokémon que no existe:
+
+```python
 r = requests.get("https://pokeapi.co/api/v2/pokemon/noexiste")
 if r.status_code == 404:
 print("Pokémon no encontrado")
+```
 
 > Siempre es buena práctica verificar status_code.
 
@@ -2408,7 +2411,6 @@ url = f"https://pokeapi.co/api/v2/type/{tipo}"
 r = requests.get(url)
 ```
 
-
 # Modularizacion
 
 En la terminal:
@@ -2421,43 +2423,40 @@ pip freeze > entorno.txt # Genera un archivo con las versiones de cada dependenc
 pip install entorno.txt
 ```
 
-# POO (crudo)
+# POO (Programación Orientada a Objetos)
 
-Lo componen:
+Se utilizan:
 
-- Constructor `__init__`: Es un método especial que se llama automáticamente cuando se crea una nueva instancia de la clase. Se usa para inicializar los atributos del objeto.
+- Constructor `__init__()`: Es un método especial que se llama automáticamente cuando se crea una nueva instancia de la clase. <ins>Se usa para inicializar los atributos (o propiedades) del objeto.</ins>
 
 - Atributos: Son variables que pertenecen a la clase. Pueden ser de instancia (diferentes para cada objeto) o de clase (compartidos entre todas las instancias).
 
-- Métodos: Son funciones definidas dentro de la clase que describen el comportamiento de los objetos de la clase  y métodos de clase que se comparten entre todas las instancias y son propios de la clase .
+- Métodos: Son <ins>funciones definidas dentro de la clase</ins> que describen el comportamiento de los objetos de la clase y métodos de clase que se comparten entre todas las instancias y son propios de la clase.
 
-Atributos y metodos (una funcion adentro de una clase)
+## Instancias
 
-instanciar una clase: genera un objeto (algoritmos 1 y 2)
+Instanciar una clase: genera un objeto (algoritmos 1 y 2)
 
-Por convencion PascalCase para definir una clave (mirar ejemplos)
+Por convencion se utiliza PascalCase para definir una clave (mirar ejemplos)
 
-metodo `__init__()` generalmente se utiliza para inicializar las propiedades de un objeto
-self: instancia el propio objeto, se pone siempre al inicio del constructor
+`self`: instancia el propio objeto, se pone siempre al inicio del constructor
 
 Importante respetar el orden para crear las instancias
 
 Para utilizar esos atributos en los metodos, hay que pasar el `self`
 
-Abstraccion
-Encapsulamiento
-Herencia
+Abstraccion  
+Encapsulamiento  
+Herencia  
 Polimorfismo
 
-## atributos
+## Atributos
 
-### getter
+### getter...?
 
 ## Decoradores
 
-se usan cuando definis la clase
-
-`cls`?
+Se usan cuando definis la clase
 
 `@classmethod`: se utiliza para crear metodos propios de la clase, como para hacer un contador
 
@@ -2465,31 +2464,31 @@ se usan cuando definis la clase
 
 algo dentro del constructor, llamas a self. Algo afuera cls?
 
-## cls
+## Explicacion `cls`
 
 > [!TODO:]
-> Limpiar 
+> Limpiar
 
-In Python's object-oriented programming (POO), "cls" is a conventional name for the first argument of a classmethod, a special type of method that receives a reference to the class itself rather than an instance of the class (which would be self). Class methods, defined with the @classmethod decorator, are useful for operations that involve the class as a whole, such as factory methods that create instances of the class or methods that interact with class attributes. 
-What "cls" represents:
+`cls` is a conventional name for the first argument of a classmethod, a special type of method that receives a reference to the class itself rather than an instance of the class (which would be self). Class methods, defined with the `@classmethod` decorator, <ins>are useful for operations that involve the class as a whole</ins>, such as factory methods that create instances of the class or methods that interact with class attributes.
 
-    A reference to the class:
-    When you define a method with the @classmethod decorator, the first parameter (conventionally named cls) automatically receives a reference to the class that the method belongs to. 
+### What `cls` represents
+
+A reference to the class:
+When you define a method with the @classmethod decorator, the first parameter (conventionally named cls) automatically receives a reference to the class that the method belongs to.
 
 Not an instance:
-Unlike self, which refers to a specific instance (object) of a class, cls refers to the class itself. 
+Unlike `self`, which refers to a specific instance (object) of a class, `cls` refers to the class itself.
 
-When to use cls and @classmethod:
+### When to use `cls` and `@classmethod`
 
 - Factory methods:
-    You can use class methods to create instances of the class in different ways. For example, you might have a factory method that creates an object from a dictionary. 
+You can use class methods to create instances of the class in different ways. For example, you might have a factory method that creates an object from a dictionary.
 
 - Class-level operations:
-When a method needs to perform an operation that belongs to the class itself, rather than to a specific instance, a class method is appropriate. 
+When a method needs to perform an operation that belongs to the class itself, rather than to a specific instance, a class method is appropriate.
 
 - Working with inheritance:
-cls automatically handles inheritance, ensuring that it always refers to the correct class, even when the method is called on a subclass. 
-
+cls automatically handles inheritance, ensuring that it always refers to the correct class, even when the method is called on a subclass.
 
 Ejemplo:
 
@@ -2511,26 +2510,6 @@ Salida:
 ```
 Greeting from MyClass!
 Class attribute: Hello
-```
-
-## primer draft ej1
-
-```python
-class Estudiante:
-    
-    total_materias = 0
-
-    # el estudiiante ya tiene una lista de materias, no es input
-    def __init__(self, estudiante, lista_materias):
-        self.estudiante = estudiante
-        self.lista_materias = lista_materias
-
-    @classmethod
-    def agregar_materia(cls):
-        lista_materias = list(input("Ingrese la materia para agregar: "))
-        Estudiante.total_materias += 1
-
-    Estudiante.agregar_materia()
 ```
 
 [^1]: En OR acumulado, el símbolo es `|=`, pero es imposible ponerlo correctamente por la forma que esta formateada la tabla
