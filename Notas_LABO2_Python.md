@@ -2139,6 +2139,11 @@ Decoradores:
  Es esencial en los decoradores para pasar argumentos a la función decorada o a la función original, manteniendo la flexibilidad de la firma
 ???????
 
+# Funcion Lambda y Comprension
+
+>[!TODO:]
+> Completar
+
 # Generadores y Requests
 
 Llamada bajo nivel o paso por paso
@@ -2425,7 +2430,7 @@ pip install entorno.txt
 
 # POO (Programación Orientada a Objetos)
 
-Se utilizan:
+Componentes principales de una clase:
 
 - Constructor `__init__()`: Es un método especial que se llama automáticamente cuando se crea una nueva instancia de la clase. <ins>Se usa para inicializar los atributos (o propiedades) del objeto.</ins>
 
@@ -2445,16 +2450,18 @@ Importante respetar el orden para crear las instancias
 
 Para utilizar esos atributos en los metodos, hay que pasar el `self`
 
-Abstraccion  
-Encapsulamiento  
-Herencia  
-Polimorfismo
+## Pilares de la programación orientada a objetos
+
+- Encapsulamiento 
+- Herencia
+- Polimorfismo
+- Abstraccion
 
 ## Atributos
 
 ### getter...?
 
-## Decoradores
+## Decoradores de Metodos
 
 Se usan cuando definis la clase
 
