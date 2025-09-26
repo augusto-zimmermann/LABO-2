@@ -2442,7 +2442,10 @@ self: instancia el propio objeto, se pone siempre al inicio del constructor
 
 Importante respetar el orden para crear las instancias
 
-Para utilizar esos atributos en los metodos, hay que pasar el `self`
+Para utilizar esos atributos en los metodos, hay que pasar el `self` 
+
+>[!TODO:]
+> DEFINI SELF
 
 Abstraccion
 Encapsulamiento
@@ -2469,6 +2472,7 @@ algo dentro del constructor, llamas a self. Algo afuera cls?
 
 > [!TODO:]
 > Limpiar 
+> Arovecha el ejemplo, mandale una clase padre vehiculo con herencia auto, moto, etc
 
 In Python's object-oriented programming (POO), "cls" is a conventional name for the first argument of a classmethod, a special type of method that receives a reference to the class itself rather than an instance of the class (which would be self). Class methods, defined with the @classmethod decorator, are useful for operations that involve the class as a whole, such as factory methods that create instances of the class or methods that interact with class attributes. 
 What "cls" represents:
@@ -2532,5 +2536,58 @@ class Estudiante:
 
     Estudiante.agregar_materia()
 ```
+
+generador, decoradores, clases entra en parcial
+
+# Pilares POO (crudo)
+
+Minecraft video hace referencia
+
+## Niveles de proteccion
+
+Encasulamiento, darle un nivel de seguridad
+
+las subclases pueden acceder a un atributo protegido
+
+## Encapsulamiento
+
+los metodos son nuestro puente a las elementos privados
+
+## Herencia
+
+Con `super()` inicializamos el constructor de la otra clase
+
+`super().__init__()` Hereda los atributos
+
+si no lo usas rompe todo, inicializa todo aunque no lo uses
+
+por que return y no print 
+
+Hacete un diagrama
+
+cuando tengas una clase padre con un atributo privado, podes entrar desde una clase hija? no...
+
+
+## Polimorfismo
+
+Guarda el ultimo que uses
+
+todos arrancan con el mismo mensaje, todos arrancan
+
+## Abstraccion
+
+formal
+
+para nosotros vamos a tener una plantilla de la plantilla 
+
+la plantilla obligatoria
+
+nos aseguramos que si o si tengas metodos asignados
+
+`@abstractmethod` 
+
+primero clase abstractas, despues el resto de clases
+
+no es correcto llamar a un metodo de una clase abstracta...?
 
 [^1]: En OR acumulado, el símbolo es `|=`, pero es imposible ponerlo correctamente por la forma que esta formateada la tabla
