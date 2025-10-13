@@ -2144,6 +2144,83 @@ Decoradores:
 >[!TODO:]
 > Completar
 
+## Que diferencia tiene lambdas con una funcion comun?
+`lambda a, b: a + b`
+→ crea una función anónima (sin nombre real, aunque acá la guardás en sumar).
+→ se usa más para funciones cortitas, de una sola expresión.
+
+`def sumar(a, b): return a + b`
+→ crea una función normal, con nombre, docstring, cuerpo, etc.
+→ podés meterle varias líneas, condiciones, loops, etc.
+
+lambda → para casos chiquitos, rápidos, throwaway code.
+Ejemplo clásico:
+```python
+lista = [(1, 'a'), (3, 'c'), (2, 'b')]
+lista.sort(key=lambda x: x[0])
+```
+Acá no te da ganas de escribir def clave(x): return x[0] solo para eso.
+
+def → para funciones con nombre, que se reutilizan, tienen más lógica, o necesitan claridad.
+
+| Aspecto        | `lambda`                                          | `def`                      |
+| -------------- | ------------------------------------------------- | -------------------------- |
+| Tipo           | Anónima                                           | Nombrada                   |
+| Cuerpo         | Una sola expresión                                | Varias líneas              |
+| Uso            | Funciones rápidas o argumentos de otras funciones | Funciones completas        |
+| Ejemplo típico | `sorted(lista, key=lambda x: x[1])`               | `def procesar_datos(...):` |
+
+## Ejemplo perfecto para lambdas
+
+Supongamos que tenés una lista de tuplas con nombre y edad, y querés ordenarla por edad:
+
+```python
+personas = [("Luna", 22), ("Tomi", 19), ("Fede", 25)]
+
+ordenadas = sorted(personas, key=lambda x: x[1])
+print(ordenadas)
+```
+
+>Salida: [('Tomi', 19), ('Luna', 22), ('Fede', 25)]
+
+Acá la lambda va joya: no necesitás una función con nombre para algo tan chiquito.
+Si hicieras lo mismo con def, sería más largo e innecesario:
+
+```python
+def por_edad(x):
+    return x[1]
+
+ordenadas = sorted(personas, key=por_edad)
+```
+
+## 💀 Ejemplo donde NO usar lambda
+
+Ahora imaginá que querés hacer una función para calcular el promedio de una lista, validando que no esté vacía:
+
+```python
+def promedio(lista):
+    if not lista:
+        return 0
+    return sum(lista) / len(lista)
+```
+
+Si intentaras hacer eso con lambda, te explota todo:
+
+```python
+promedio = lambda lista: sum(lista) / len(lista) if lista else 0  # ok...
+```
+
+Podés hacerlo, pero si quisieras agregar más lógica o comentarios, se vuelve ilegible rápido.  
+No podés poner varias líneas, ni usar try/except, ni docstrings, ni nada elegante.
+
+## 🧠 Regla de oro:
+
+>Usá lambda cuando la función es tan corta que escribir def sería perder tiempo.  
+>Usá def cuando la función merezca un nombre, una explicación, o más de una línea.
+
+>Usá lambda dentro de una función solo si simplifica, no si complica.
+>Si tenés que leerla dos veces para entenderla, ya dejó de ser útil.
+
 # Generadores y Requests
 
 Llamada bajo nivel o paso por paso
